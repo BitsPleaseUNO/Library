@@ -14,7 +14,7 @@ namespace jetstreamsgo.Models
             public string Author { get; set; }
             public string Language { get; set; }
             public int Pages { get; set; }
-            public virtual Publisher Publisher { get; set; }
+            public string Publisher { get; set; }
         }
 
         public class Publisher
