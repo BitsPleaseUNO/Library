@@ -32,7 +32,6 @@ namespace jetstreamsgo.Data
             {
                 entity.HasKey(e => e.ISBN);
                 entity.Property(e => e.Title).IsRequired();
-                entity.HasOne(d => d.Publisher)
                   .WithMany(p => p.Books);
             });
         }
