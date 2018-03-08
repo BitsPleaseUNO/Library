@@ -2,22 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using jetstreamsgo.Data;
+using Library.Data;
 using Microsoft.AspNetCore.Mvc;
-using static jetstreamsgo.Models.LibraryModel;
+using static Library.Models.LibraryModel;
 
-namespace jetstreamsgo.Controllers
+namespace Library.Controllers
 {
     public class BookController : Controller
     {
-        private LibraryContext dbc = new LibraryContext();
+        private ApplicationDbContext dbc = new ApplicationDbContext();
 
         public IActionResult Add()
         {
             return View();
         }
         
-        public IActionResult Index()
+        public IActionResult List()
         {
             IEnumerable<Book> _viewModel;
             _viewModel = dbc.Book.AsEnumerable();
@@ -34,12 +34,12 @@ namespace jetstreamsgo.Controllers
                 Author = author,
                 Pages = pages,
                 Language = "English",
-                Publisher = newBookPublisher,
+                Publisher = publisher,
             };
             dbc.Book.Add(newBook);
             dbc.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Book", "List");
         }
     }
 }
