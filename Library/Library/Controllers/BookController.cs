@@ -39,7 +39,7 @@ namespace Library.Controllers
             dbc.Book.Add(newBook);
             dbc.SaveChanges();
 
-            return RedirectToAction("Book", "List");
+            return RedirectToAction("List", "Book");
         }
     }
 }
