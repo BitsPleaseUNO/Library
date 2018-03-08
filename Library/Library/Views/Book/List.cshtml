@@ -1,0 +1,34 @@
+@model IEnumerable<jetstreamsgo.Models.LibraryModel.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+<div class="table-intro">
+    <h2>Books</h2>
+    <p>These are the books in the library.</p>
+</div>
+<a asp-area="" asp-controller="Book" asp-action="Add" class="btn btn-primary" id="btnAdd"><span class="glyphicon glyphicon-plus-sign"></span> Add Book</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Language</th>
+            <th>Pages</th>
+            <th>Publisher</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (jetstreamsgo.Models.LibraryModel.Book book in Model)
+        {
+            <tr>
+                <td>@book.ISBN</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Language</td>
+                <td>@book.Pages</td>
+                <td>@book.Publisher.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
