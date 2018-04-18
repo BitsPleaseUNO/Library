@@ -16,5 +16,15 @@ namespace Library.Models
             public int Pages { get; set; }
             public string Publisher { get; set; }
         }
+
+        public class Lease
+        {
+            public virtual Book Book { get; set; }
+            public virtual ApplicationUser User { get; set; }
+
+            public DateTime LeaseStartDate { get; set; }
+
+            public DateTime LeaseEndDate { get; set; }
+        }
     }
 }

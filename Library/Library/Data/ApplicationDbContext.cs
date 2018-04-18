@@ -24,7 +24,7 @@ namespace Library.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=library.quickdev.top;database=library;user=library;password=A%b42aWD#A@!");
+            optionsBuilder.UseMySQL("server=52.41.9.144;database=library;user=library;password=A%b42aWD#A@!");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

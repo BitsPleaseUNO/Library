@@ -14,6 +14,9 @@
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
             </li>
+            <li style="padding-top:13px; padding-left:13px;">
+                @if((await UserManager.GetUsersInRoleAsync("Admin")).Contains(await UserManager.FindByNameAsync(UserManager.GetUserName(User)))){@Html.Raw("<span class=\"label label-danger\">Administrator</span>");}
+            </li>
         </ul>
     </form>
 }
