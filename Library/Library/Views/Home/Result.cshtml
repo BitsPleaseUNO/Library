@@ -1,12 +1,10 @@
 @model IEnumerable<Library.Models.LibraryModel.Book>
 @{
-    ViewData["Title"] = "Books";
+    ViewData["Title"] = "Results";
 }
 <div class="table-intro">
-    <h2>Books</h2>
-    <p>These are the books in the library.</p>
+    <h2>Results</h2>
 </div>
-<a asp-area="" asp-controller="Book" asp-action="Add" class="btn btn-primary" id="btnAdd"><span class="glyphicon glyphicon-plus-sign"></span> Add Book</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -16,7 +14,6 @@
             <th>Language</th>
             <th>Pages</th>
             <th>Publisher</th>
-            <td>Lease</td>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +26,6 @@
                 <td>@book.Language</td>
                 <td>@book.Pages</td>
                 <td>@book.Publisher</td>
-                <td><a href="/Book/Lease/@book.ISBN">Lease</a></td>
             </tr>
         }
     </tbody>

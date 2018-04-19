@@ -21,6 +21,8 @@ namespace Library.Data
         }
 
         public DbSet<Book> Book { get; set; }
+        
+        public DbSet<Lease> Lease { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +40,13 @@ namespace Library.Data
             {
                 entity.HasKey(e => e.ISBN);
                 entity.Property(e => e.Title).IsRequired();
+            });
+
+            builder.Entity<Lease>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.Leases);
             });
         }
     }

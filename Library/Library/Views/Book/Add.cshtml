@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="inputPublisher" class="col-sm-2 control-label">Publisher</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="publisher" id="inputPublisher" placeholder="Publisher"
+            <input type="text" class="form-control" name="publisher" id="inputPublisher" placeholder="Publisher">
         </div>
     </div>
     <div class="form-group">
@@ -44,7 +44,7 @@
 </form>
 @section Scripts{
     <script>
-        $.validator.addMethod("validISBN", function (value, element) {
+        $.validator.addMethod("validisbn", function (value, element) {
             // Remove non ISBN digits, then split into an array
             var chars = value.replace(/[- ]|^ISBN(?:-1[03])?:?/g, "").split("");
             // Remove the final ISBN digit from `chars`, and assign it to `last`

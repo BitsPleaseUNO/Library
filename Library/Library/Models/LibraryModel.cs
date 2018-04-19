@@ -15,12 +15,14 @@ namespace Library.Models
             public string Language { get; set; }
             public int Pages { get; set; }
             public string Publisher { get; set; }
+            public virtual ICollection<Lease> Leases { get; set; }
         }
 
         public class Lease
         {
+            public int Id { get; set; }
             public virtual Book Book { get; set; }
-            public virtual ApplicationUser User { get; set; }
+            public string Email { get; set; }
 
             public DateTime LeaseStartDate { get; set; }
 
